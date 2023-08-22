@@ -1,6 +1,7 @@
 package plugin.sample.main;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
@@ -67,7 +68,7 @@ public final class Main extends JavaPlugin implements Listener {
             }
             Path path = Path.of("firework.txt");
             Files.writeString(path,"たーまーやー");
-            player.sendMessage(Files.readString(path));
+            player.sendMessage(Files.readString(path, StandardCharsets.UTF_8));
         }
         count++;
 
