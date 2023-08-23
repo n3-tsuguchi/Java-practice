@@ -68,7 +68,7 @@ public final class Main extends JavaPlugin implements Listener {
             }
             Path path = Path.of("firework.txt");
             Files.writeString(path,"たーまーやー");
-            player.sendMessage(Files.readString(path, StandardCharsets.UTF_8));
+            player.sendMessage(Files.readString(path));
         }
         count++;
 
