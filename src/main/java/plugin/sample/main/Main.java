@@ -1,8 +1,6 @@
 package plugin.sample.main;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -29,6 +27,7 @@ public final class Main extends JavaPlugin implements Listener {
   @Override
   public void onEnable() {
     Bukkit.getPluginManager().registerEvents(this, this);
+    getCommand("levelup").setExecutor(new LevelUpCommand());
   }
 
   @EventHandler
@@ -38,7 +37,7 @@ public final class Main extends JavaPlugin implements Listener {
   }
 
   /**
-   * プレイヤーがスニークを開始/終了する際に起動されるイベントハンドラ。
+   * プレイヤーがスニークを開始/終了する際に起動されるイベントハンドラ。xnr*mta0NJK4mfe@fec
    *
    * @param e イベント
    */
@@ -71,9 +70,6 @@ public final class Main extends JavaPlugin implements Listener {
         // 追加した情報で再設定する。
         firework.setFireworkMeta(fireworkMeta);
       }
-      Path path = Path.of("firework.txt");
-      Files.writeString(path, "たーまーやー");
-      player.sendMessage(Files.readString(path));
     }
     count++;
 
