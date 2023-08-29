@@ -28,6 +28,7 @@ public final class Main extends JavaPlugin implements Listener {
   public void onEnable() {
     Bukkit.getPluginManager().registerEvents(this, this);
     getCommand("setLevel").setExecutor(new SetLevelCommand());
+    getCommand("allSetLevel").setExecutor(new AllSetLevelCommand());
   }
 
   @EventHandler
